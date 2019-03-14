@@ -1,35 +1,81 @@
-package com.kredivation.kqmoney
+package com.kredivation.allquestionanswer
 
 import android.os.Bundle
-import android.support.design.widget.Snackbar
 import android.support.design.widget.NavigationView
 import android.support.v4.view.GravityCompat
 import android.support.v7.app.ActionBarDrawerToggle
 import android.support.v7.app.AppCompatActivity
+import android.support.v7.widget.GridLayoutManager
+import android.support.v7.widget.LinearLayoutManager
+import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
+import com.kredivation.kqmoney.R
+import com.kredivation.kqmoney.adapter.CatTypeRecyclerAdapter
+import com.kredivation.kqmoney.model.News
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.app_bar_main.*
+import kotlinx.android.synthetic.main.content_main.*
+import org.json.JSONArray
+import org.json.JSONObject
+import java.io.InputStream
+import java.util.ArrayList
 
 class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
+    private val TAG: String = "MainActivity"
+    private lateinit var linearLayoutManager: LinearLayoutManager
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         setSupportActionBar(toolbar)
-
-        fab.setOnClickListener { view ->
-            Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                .setAction("Action", null).show()
-        }
-
         val toggle = ActionBarDrawerToggle(
             this, drawer_layout, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close
         )
         drawer_layout.addDrawerListener(toggle)
         toggle.syncState()
-
         nav_view.setNavigationItemSelectedListener(this)
+        linearLayoutManager = LinearLayoutManager(this)
+        val jsonString: String = readJsonFromKotlinFile()
+        val newsList: ArrayList<News> = parseJsonStringToNewsList(jsonString)
+        recyclerView.layoutManager = LinearLayoutManager(this)
+        recyclerView.setHasFixedSize(true)
+      //  recyclerView.layoutManager = GridLayoutManager(this, 2);
+        recyclerView.adapter = CatTypeRecyclerAdapter(newsList)
+
+
+    }
+
+    private fun parseJsonStringToNewsList(jsonString: String): ArrayList<News> {
+        val newsList: ArrayList<News> = ArrayList<News>(0)
+        val newsArray = JSONArray(jsonString)
+        var i = 0
+        var numIterations = newsArray.length()
+        while (i < numIterations) {
+            val newsObject: JSONObject = newsArray.getJSONObject(i)
+            val news = News()
+            news.news_title = newsObject.getString("news_title")
+            news.news_image_url = newsObject.getString("news_image_url")
+            news.news_source = newsObject.getString("news_source")
+            news.news_detail = newsObject.getString("news_detail")
+            news.news_url = newsObject.getString("news_url")
+            news.id = newsObject.getInt("id")
+            newsList.add(news)
+            i++
+        }
+        return newsList
+    }
+
+    private fun readJsonFromKotlinFile(): String {
+        var inputString = ""
+        try {
+            val inputStream: InputStream = assets.open("news_data_file.json")
+            inputString = inputStream.bufferedReader().use { it.readText() }
+            Log.d(TAG, inputString)
+        } catch (e: Exception) {
+            Log.d(TAG, e.toString())
+        }
+        return inputString
     }
 
     override fun onBackPressed() {

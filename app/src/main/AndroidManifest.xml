@@ -10,7 +10,13 @@
             android:supportsRtl="true"
             android:theme="@style/AppTheme">
         <activity
-                android:name=".MainActivity"
+                android:name="com.kredivation.allquestionanswer.LoginActivity"
+                android:label="@string/app_name">
+        </activity>
+        <activity android:name="com.kredivation.allquestionanswer.MainActivity">
+        </activity>
+        <activity
+                android:name="com.kredivation.allquestionanswer.SplashScreenActivity"
                 android:label="@string/app_name"
                 android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
