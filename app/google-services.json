@@ -1,0 +1,63 @@
+{
+  "project_info": {
+    "project_number": "1002905748901",
+    "firebase_url": "https://kqmoney-15363.firebaseio.com",
+    "project_id": "kqmoney-15363",
+    "storage_bucket": "kqmoney-15363.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1002905748901:android:52cbc9fe6e7afc7c",
+        "android_client_info": {
+          "package_name": "com.kredivation.kqmoney"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1002905748901-noi19h9t63lcsucjourcfn670reu65b2.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.kredivation.kqmoney",
+            "certificate_hash": "d88db1e34bbb00aec98f6c6a2f120c1fdb451ba8"
+          }
+        },
+        {
+          "client_id": "1002905748901-pdgniu304ac80p2rb02glncu2ctc7qov.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.kredivation.kqmoney",
+            "certificate_hash": "b36cc174fe8236ce38bacc2a62ab6f5cae38cba6"
+          }
+        },
+        {
+          "client_id": "1002905748901-i6hs3bjofqkbao2uv2nql8efdhloj518.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCe9wgyZDeTrSkOC2yXDKVBMlEG4GV3cl8"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1002905748901-i6hs3bjofqkbao2uv2nql8efdhloj518.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
