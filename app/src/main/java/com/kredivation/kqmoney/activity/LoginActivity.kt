@@ -1,32 +1,24 @@
 package com.kredivation.allquestionanswer
 
-import android.animation.Animator
-import android.animation.AnimatorListenerAdapter
-import android.annotation.TargetApi
-import android.content.pm.PackageManager
-import android.support.design.widget.Snackbar
+import android.content.Context
 import android.support.v7.app.AppCompatActivity
-import android.app.LoaderManager.LoaderCallbacks
-import android.content.CursorLoader
-import android.content.Loader
-import android.database.Cursor
-import android.net.Uri
-import android.os.AsyncTask
-import android.os.Build
 import android.os.Bundle
-import android.provider.ContactsContract
-import android.text.TextUtils
-import android.view.View
 import android.view.inputmethod.EditorInfo
-import android.widget.ArrayAdapter
 import android.widget.TextView
-
-import java.util.ArrayList
-import android.Manifest.permission.READ_CONTACTS
 import android.content.Intent
+import android.widget.Toast
+import com.google.gson.Gson
+import com.kredivation.kqmoney.HomeActivity
 import com.kredivation.kqmoney.R
-
+import com.kredivation.kqmoney.activity.SignUpAcivity
+import com.kredivation.kqmoney.framework.IAsyncWorkCompletedCallback
+import com.kredivation.kqmoney.framework.ServiceCaller
+import com.kredivation.kqmoney.model.ContentData
+import com.kredivation.kqmoney.utility.Contants
+import com.kredivation.kqmoney.utility.Utility
 import kotlinx.android.synthetic.main.activity_login.*
+import org.json.JSONException
+import org.json.JSONObject
 
 /**
  * A login screen that offers login via email/password.
@@ -49,6 +41,13 @@ class LoginActivity : AppCompatActivity() {
         })
 
         email_sign_in_button.setOnClickListener { attemptLogin() }
+
+        SignUpBtn.setOnClickListener {
+            val intent = Intent(this, SignUpAcivity::class.java)
+            intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_NEW_TASK
+            startActivity(intent)
+        }
+
     }
 
 
@@ -57,6 +56,7 @@ class LoginActivity : AppCompatActivity() {
         intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_NEW_TASK
         startActivity(intent)
     }
+
 
 
 }

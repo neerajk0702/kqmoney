@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#008577</color>
-    <color name="colorPrimaryDark">#00574B</color>
+    <color name="colorPrimary">#408CFF</color>
+    <color name="colorPrimaryDark">#408CFF</color>
     <color name="colorAccent">#D81B60</color>
     <color name="notifIconColor">@color/orange</color>
     <color name="wiz_page_indicator_selected_color">@color/orange</color>
@@ -25,6 +25,7 @@
     <color name="note_text_disabled">#333333</color>
     <color name="navy">#6699FF</color>
     <color name="sky">#0099CC</color>
+    <color name="loginmaincolo">#823CFE</color>
     <color name="gray">#808080</color>
     <color name="lightgray">#e7e7e7</color>
     <color name="lightgray02">#bfbfbf</color>

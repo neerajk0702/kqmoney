@@ -1,60 +1,52 @@
 package com.kredivation.kqmoney.adapter
 
 import android.support.v7.widget.RecyclerView
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.kredivation.kqmoney.R
+import android.widget.ImageView
 import com.kredivation.kqmoney.model.News
 import com.squareup.picasso.Picasso
+import android.widget.TextView
+import com.kredivation.kqmoney.R
 import kotlinx.android.synthetic.main.item_grid.view.*
 
 
-class CatTypeRecyclerAdapter(private val news: ArrayList<News>) :
+class CatTypeRecyclerAdapter(private val items: List<News>, private val listener: OnItemClickListener) :
     RecyclerView.Adapter<CatTypeRecyclerAdapter.ViewHolder>() {
 
-    override fun getItemCount(): Int {
-        return news.size
+    interface OnItemClickListener {
+        fun onItemClick(item: News)
     }
 
-    override fun onBindViewHolder(holder: CatTypeRecyclerAdapter.ViewHolder, position: Int) {
-        val itemNews = news[position]
-        holder.bindNews(itemNews)
-    }
-
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CatTypeRecyclerAdapter.ViewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val v = LayoutInflater.from(parent.context).inflate(R.layout.item_grid, parent, false)
         return ViewHolder(v)
-
     }
 
+    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
+        holder.bind(items[position], listener)
+    }
 
-    class ViewHolder(v: View) : RecyclerView.ViewHolder(v), View.OnClickListener {
+    override fun getItemCount(): Int {
+        return items.size
+    }
 
-        private var view: View = v
-        private var news: News? = null
+    class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+
+        private val name: TextView
+        private val image: ImageView
 
         init {
-            v.setOnClickListener(this)
+            name = itemView.findViewById(R.id.tv_heading) as TextView
+            image = itemView.findViewById(R.id.iv_cover) as ImageView
         }
 
-        override fun onClick(v: View?) {
-            Log.d("RecyclerView", "CLICK!")
+        fun bind(item: News, listener: OnItemClickListener) {
 
-
-
-//            val context = itemView.context
-//            val showPhotoIntent = Intent(context, PhotoActivity::class.java)
-//            showPhotoIntent.putExtra(PHOTO_KEY, photo)
-//            context.startActivity(showPhotoIntent)
-        }
-
-        fun bindNews(news: News) {
-            this.news = news
-            Picasso.with(view.context).load(news.news_image_url).into(view.iv_cover)
-            view.tv_heading.text = news.news_title
-            view.tv_source.text = news.news_source
+            name.setText(item.news_title)
+            Picasso.with(itemView.context).load(item.news_image_url).into(image)
+            itemView.setOnClickListener { listener.onItemClick(item) }
         }
     }
 }

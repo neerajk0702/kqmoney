@@ -8,6 +8,7 @@ import java.util.Date
 
 class News {
 
+
     /**
      * id : 1
      * news_title : Hello Vamsi, This is your First News Title!
@@ -24,4 +25,40 @@ class News {
     var news_url: String? = null
     var news_source: String? = null
     var pub_date: Date? = null
+
+
+    var name: String? = null
+    var qname: String? = null
+    var image_drawable: Int = 0
+
+    constructor()
+
+    fun getNames(): String {
+        return name.toString()
+    }
+
+    fun setNames(name: String) {
+        this.name = name
+    }
+
+    fun getImage_drawables(): Int {
+        return image_drawable
+    }
+
+    fun setImage_drawables(image_drawable: Int) {
+        this.image_drawable = image_drawable
+    }
+    fun getqname(): String {
+        return qname.toString()
+    }
+
+    fun setqname(name: String) {
+        this.qname = name
+    }
+
+
+    constructor(name: String, image: Int) {
+        this.name = name
+        this.image_drawable = image
+}
 }

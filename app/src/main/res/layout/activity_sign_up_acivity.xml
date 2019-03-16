@@ -1,0 +1,335 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                xmlns:tools="http://schemas.android.com/tools"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#fff">
+
+    <RelativeLayout
+            android:id="@+id/rl_one_login"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+        <View
+                android:id="@+id/v_one_login"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_350dp"
+                android:background="@color/colorPrimary"/>
+
+        <RelativeLayout
+                android:id="@+id/rl_two_login"
+                android:layout_width="match_parent"
+                android:layout_marginTop="@dimen/_5dp"
+                android:padding="@dimen/_5dp"
+                android:layout_height="wrap_content">
+
+            <ImageView
+                    android:layout_width="@dimen/_100dp"
+                    android:src="@drawable/questionanswer"
+                    android:layout_centerInParent="true"
+                    android:layout_height="@dimen/_90dp"/>
+
+
+            <!-- <TextView
+                     android:id="@+id/mainView"
+                     android:layout_width="match_parent"
+                     android:layout_gravity="center"
+                     android:gravity="center"
+                     android:textStyle="bold"
+                     android:layout_marginTop="@dimen/_19dp"
+                     android:text="Sign in"
+                     android:textColor="@color/white"
+                     android:textSize="@dimen/_14dp"
+                     android:layout_height="wrap_content"/>
+
+             <TextView
+                     android:layout_width="match_parent"
+                     android:layout_gravity="center"
+                     android:gravity="center"
+                     android:textStyle="bold"
+                     android:layout_below="@+id/mainView"
+                     android:text="Login your account"
+                     android:textColor="@color/white"
+                     android:textSize="@dimen/_12dp"
+                     android:layout_height="wrap_content"/>-->
+
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+    <LinearLayout
+            android:id="@+id/lin_card"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="@dimen/_5dp"
+            android:layout_marginTop="@dimen/_60dp"
+            android:visibility="visible"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="0dp">
+
+        <android.support.v7.widget.CardView
+                android:id="@+id/cv_one_login"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_margin="15dp"
+                android:layout_gravity="center"
+                android:elevation="@dimen/_10dp"
+                app:cardCornerRadius="@dimen/_20dp"
+                app:cardPreventCornerOverlap="true"
+                app:cardUseCompatPadding="true"
+                card_view:cardElevation="10dp">
+
+            <android.support.v4.widget.NestedScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                <LinearLayout
+                        android:layout_width="match_parent"
+                        android:orientation="vertical"
+                        android:layout_gravity="center"
+                        android:padding="@dimen/_5dp"
+                        android:layout_marginLeft="@dimen/_8dp"
+                        android:layout_marginRight="@dimen/_8dp"
+                        android:layout_height="wrap_content">
+
+                    <TextView
+                            android:layout_width="match_parent"
+                            android:layout_gravity="center"
+                            android:gravity="center"
+                            android:textStyle="bold"
+                            android:padding="@dimen/_5dp"
+                            android:text="Create Your Account"
+                            android:layout_marginTop="@dimen/_5dp"
+                            android:textColor="@color/facebook_dark"
+                            android:textSize="@dimen/_14dp"
+                            android:layout_height="wrap_content"/>
+
+                    <LinearLayout
+                            android:id="@+id/linearLayout1"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_10dp"
+                            android:layout_centerInParent="true"
+                            android:layout_gravity="center_vertical"
+                            android:focusable="true"
+                            android:padding="@dimen/_5dp"
+                            android:background="@drawable/bg_boder_round"
+                            android:focusableInTouchMode="true"
+                            android:orientation="horizontal">
+
+                        <ImageView
+                                android:layout_width="0dp"
+                                android:layout_gravity="center"
+                                android:layout_weight=".1"
+                                android:padding="@dimen/_5dp"
+                                android:src="@drawable/ic_user_silhouette"
+                                android:layout_height="match_parent"/>
+
+                        <View
+                                android:layout_width="2dp"
+                                android:background="@color/gray"
+                                android:layout_marginLeft="@dimen/_5dp"
+                                android:layout_marginRight="@dimen/_5dp"
+                                android:layout_height="match_parent"/>
+
+                        <EditText
+                                android:id="@+id/name"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:hint="Enter Name"
+                                android:padding="@dimen/_5dp"
+                                android:layout_weight=".8"
+                                android:backgroundTint="@color/white"
+                                android:singleLine="true"
+                                android:textColorHint="#cccccc"/>
+
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_15dp"
+                            android:layout_centerInParent="true"
+                            android:layout_gravity="center_vertical"
+                            android:focusable="true"
+                            android:padding="@dimen/_5dp"
+                            android:background="@drawable/bg_boder_round"
+                            android:focusableInTouchMode="true"
+                            android:orientation="horizontal">
+
+                        <ImageView
+                                android:layout_width="0dp"
+                                android:layout_gravity="center"
+                                android:layout_weight=".1"
+                                android:padding="@dimen/_5dp"
+                                android:src="@drawable/ic_email_filled_closed_envelope"
+                                android:layout_height="match_parent"/>
+
+                        <View
+                                android:layout_width="2dp"
+                                android:background="@color/gray"
+                                android:layout_marginLeft="@dimen/_5dp"
+                                android:layout_marginRight="@dimen/_5dp"
+                                android:layout_height="match_parent"/>
+
+                        <EditText
+                                android:id="@+id/emailid"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:hint="Enter Email id"
+                                android:padding="@dimen/_5dp"
+                                android:layout_weight=".8"
+                                android:inputType="textEmailAddress"
+                                android:backgroundTint="@color/white"
+                                android:singleLine="true"
+                                android:textColorHint="#cccccc"/>
+
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_15dp"
+                            android:layout_centerInParent="true"
+                            android:layout_gravity="center_vertical"
+                            android:focusable="true"
+                            android:padding="@dimen/_5dp"
+                            android:background="@drawable/bg_boder_round"
+                            android:focusableInTouchMode="true"
+                            android:orientation="horizontal">
+
+                        <ImageView
+                                android:layout_width="0dp"
+                                android:layout_gravity="center"
+                                android:layout_weight=".1"
+                                android:padding="@dimen/_5dp"
+                                android:src="@drawable/ic_smartphone_call"
+                                android:layout_height="match_parent"/>
+
+                        <View
+                                android:layout_width="2dp"
+                                android:background="@color/gray"
+                                android:layout_marginLeft="@dimen/_5dp"
+                                android:layout_marginRight="@dimen/_5dp"
+                                android:layout_height="match_parent"/>
+
+                        <EditText
+                                android:id="@+id/phoneno"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:hint="Enter Phone No"
+                                android:padding="@dimen/_5dp"
+                                android:layout_weight=".8"
+                                android:inputType="textEmailAddress"
+                                android:backgroundTint="@color/white"
+                                android:singleLine="true"
+                                android:textColorHint="#cccccc"/>
+
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_15dp"
+                            android:layout_centerInParent="true"
+                            android:layout_gravity="center_vertical"
+                            android:focusable="true"
+                            android:padding="@dimen/_5dp"
+                            android:background="@drawable/bg_boder_round"
+                            android:focusableInTouchMode="true"
+                            android:orientation="horizontal">
+
+                        <ImageView
+                                android:layout_width="0dp"
+                                android:layout_gravity="center"
+                                android:layout_weight=".1"
+                                android:padding="@dimen/_5dp"
+                                android:src="@drawable/ic_home_address"
+                                android:layout_height="match_parent"/>
+
+                        <View
+                                android:layout_width="2dp"
+                                android:background="@color/gray"
+                                android:layout_marginLeft="@dimen/_5dp"
+                                android:layout_marginRight="@dimen/_5dp"
+                                android:layout_height="match_parent"/>
+
+                        <EditText
+                                android:id="@+id/address"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:hint="Enter Address"
+                                android:padding="@dimen/_5dp"
+                                android:layout_weight=".8"
+                                android:inputType="textEmailAddress"
+                                android:backgroundTint="@color/white"
+                                android:singleLine="true"
+                                android:textColorHint="#cccccc"/>
+
+
+                    </LinearLayout>
+
+
+                    <Button
+                            android:id="@+id/signUp"
+                            style="@style/DefaultButtonText"
+                            android:layout_width="@dimen/_200dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginTop="20dp"
+                            android:background="@drawable/button_facebook"
+                            android:gravity="center"
+                            android:padding="@dimen/_5dp"
+                            android:text="Sign Up"/>
+
+
+                    <LinearLayout
+                            android:layout_width="match_parent"
+                            android:orientation="horizontal"
+                            android:padding="@dimen/_5dp"
+                            android:layout_margin="@dimen/_5dp"
+                            android:layout_height="wrap_content">
+
+
+                        <TextView
+                                android:layout_width="wrap_content"
+                                android:padding="@dimen/_5dp"
+                                android:textSize="@dimen/_12dp"
+                                android:textAlignment="center"
+                                android:layout_weight="1"
+                                android:textColor="@color/facebook_dark"
+                                android:layout_gravity="center"
+                                android:text="you have an account !"
+                                android:layout_height="wrap_content"/>
+
+                        <TextView
+                                android:id="@+id/signBtn"
+                                android:layout_width="wrap_content"
+                                android:padding="@dimen/_5dp"
+                                android:textSize="@dimen/_12dp"
+                                android:textAlignment="center"
+                                android:textColor="@color/facebook_dark"
+                                android:layout_gravity="center"
+                                android:text="Sign In"
+                                android:layout_height="wrap_content"/>
+
+
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+            </android.support.v4.widget.NestedScrollView>
+
+        </android.support.v7.widget.CardView>
+
+
+    </LinearLayout>
+</RelativeLayout>

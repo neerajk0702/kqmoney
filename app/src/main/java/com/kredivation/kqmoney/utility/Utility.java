@@ -1,38 +1,46 @@
 package com.kredivation.kqmoney.utility;
 
+import android.annotation.SuppressLint;
+import android.app.Activity;
 import android.app.AlertDialog;
+import android.app.Dialog;
 import android.content.ContentUris;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.SharedPreferences;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.database.Cursor;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
-import android.graphics.Typeface;
+import android.graphics.*;
+import android.graphics.drawable.Drawable;
+import android.graphics.drawable.GradientDrawable;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.net.Uri;
-import android.os.AsyncTask;
-import android.os.Build;
-import android.os.Environment;
-import android.os.Handler;
+import android.os.*;
 import android.provider.DocumentsContract;
 import android.provider.MediaStore;
+import android.support.annotation.ColorInt;
 import android.support.annotation.ColorRes;
+import android.support.annotation.DrawableRes;
 import android.support.annotation.RequiresApi;
+import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.content.ContextCompat;
 import android.support.v4.util.LruCache;
 import android.util.Base64;
 import android.util.Log;
+import android.view.Display;
 import android.view.Gravity;
 import android.view.View;
+import android.view.WindowManager;
+import android.view.animation.OvershootInterpolator;
+import android.view.animation.ScaleAnimation;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
-import com.kredivation.kqmoney.R;
 import com.squareup.picasso.Picasso;
 
 import java.io.*;
@@ -232,26 +240,22 @@ public class Utility {
     }
 
     //alert for Error message
-    public static void alertForErrorMessage(String errorMessage, Context mContext) {
-        final AlertDialog.Builder builder = new AlertDialog.Builder(mContext);
-        Typeface roboto_regular = Typeface.createFromAsset(mContext.getAssets(), "fonts/roboto.regular.ttf");
-        final AlertDialog alert = builder.create();
-        // alert.getWindow().getAttributes().windowAnimations = R.style.alertAnimation;
-        View view = alert.getLayoutInflater().inflate(R.layout.custom_error_alert, null);
-        TextView title = (TextView) view.findViewById(R.id.title);
-        title.setTypeface(roboto_regular);
-        TextView ok = (TextView) view.findViewById(R.id.Ok);
-        ok.setTypeface(roboto_regular);
-        title.setText(errorMessage);
-        alert.setCustomTitle(view);
-        ok.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                alert.dismiss();
-            }
-        });
-        alert.show();
+
+
+    //set medicine id
+    public static void setMedicineId(Context context, int id) {
+        try {
+            SharedPreferences prefs = context.getSharedPreferences("MedicineIdPreferences", Context.MODE_PRIVATE);
+            SharedPreferences.Editor editor = prefs.edit();
+            editor.putInt("medicineId", id);
+            editor.commit();
+        } catch (Exception e) {
+            // should never happen
+            //   throw new RuntimeException("Could not get language: " + e);
+        }
     }
+
+
     @RequiresApi(api = Build.VERSION_CODES.KITKAT)
     public static String getPath(Context context, final Uri uri) {
 
@@ -443,6 +447,7 @@ public class Utility {
         }
         return device_token;
     }
+
 
     // convert i/o stream into byte array
 
@@ -727,23 +732,4 @@ public class Utility {
         }
     }
 
-    public static String getOsVersion() {
-        int index = Build.VERSION.SDK_INT;
-        return String.valueOf(index);
-    }
-
-    public static void clearRewindValue(Context context) {
-        SharedPreferences prefs = context.getSharedPreferences("RewindPreferences", Context.MODE_PRIVATE);
-        if (prefs != null) {
-            prefs.edit().clear().commit();
-        }
-    }
-
-    public static File getExternalStorageFilePathCreateAppDirectory(Context context) {
-        File directory = new File(Environment.getExternalStorageDirectory(), Contants.APP_DIRECTORY);
-        if (!directory.exists()) {
-            directory.mkdirs();
-        }
-        return directory;
-    }
 }

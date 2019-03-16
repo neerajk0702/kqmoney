@@ -5,15 +5,19 @@
     <application
             android:name=".framework.AppController"
             android:allowBackup="true"
+            android:hardwareAccelerated="true"
             android:icon="@mipmap/ic_launcher"
             android:label="@string/app_name"
+            android:largeHeap="true"
             android:roundIcon="@mipmap/ic_launcher_round"
+            android:screenOrientation="portrait"
             android:supportsRtl="true"
             android:theme="@style/AppTheme"
-            android:hardwareAccelerated="true"
-            android:largeHeap="true"
-            android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustPan">
+        <activity android:name=".activity.SignUpAcivity">
+        </activity>
+        <activity android:name=".HomeActivity"/>
+        <activity android:name=".ViewQAModelActivity"/>
         <activity
                 android:name="com.kredivation.allquestionanswer.LoginActivity"
                 android:label="@string/app_name">
