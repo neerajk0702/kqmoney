@@ -70,7 +70,7 @@ abstract class FileUploaderHelper(
         return null
     }
 
-    abstract override fun receiveData(result: String)
+    abstract override fun receiveData(result: String?)
 
 
 }

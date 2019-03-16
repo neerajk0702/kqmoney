@@ -5,6 +5,7 @@
                                               app:cardCornerRadius="@dimen/_10dp"
                                               android:layout_margin="@dimen/_5dp"
                                               app:cardElevation="@dimen/_8dp"
+                                              app:cardBackgroundColor="@color/color2"
                                               android:layout_height="wrap_content"
                                               android:orientation="vertical"
                                               android:layout_width="match_parent">
@@ -33,6 +34,11 @@
                     android:layout_width="match_parent"
                     android:text="Q -What is The Old Name Of India?"
                     android:textSize="@dimen/_14dp"
+                    android:layout_gravity="center"
+                    android:textStyle="bold"
+                    android:layout_margin="@dimen/_3dp"
+                    android:textColor="@color/black"
+                    android:textAlignment="center"
                     android:padding="@dimen/_5dp"
                     android:layout_height="match_parent"/>
 
@@ -43,80 +49,72 @@
                     android:textSize="@dimen/_10dp"
                     android:layout_marginLeft="@dimen/_5dp"
                     android:padding="@dimen/_5dp"
+                    android:textAlignment="center"
+                    android:textColor="@color/black"
                     android:textStyle="italic"
                     android:layout_height="match_parent"/>
 
             <LinearLayout
+                    android:id="@+id/questionLayoutView"
                     android:layout_width="match_parent"
                     android:orientation="vertical"
-                    android:padding="@dimen/_5dp"
-                    android:layout_margin="@dimen/_5dp"
+                    android:layout_marginLeft="@dimen/_5dp"
+                    android:layout_marginRight="@dimen/_5dp"
+                    android:layout_marginTop="@dimen/_15dp"
                     android:layout_height="wrap_content">
 
-
-                <LinearLayout
-                        android:id="@+id/firstAnswer"
+              <!--  <LinearLayout
                         android:layout_width="match_parent"
                         android:orientation="horizontal"
-                        android:padding="@dimen/_8dp"
-                        android:background="@drawable/bg_boder_round"
-                        android:layout_marginTop="@dimen/_5dp"
-                        android:layout_marginBottom="@dimen/_5dp"
-                        android:layout_height="wrap_content">
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:background="@drawable/buy_button"
+                        android:layout_margin="@dimen/_5dp"
+                        android:layout_height="@dimen/_35dp">
 
-                    <TextView
+                    <LinearLayout
+                            android:layout_width="@dimen/_10dp"
+                            android:layout_weight=".15"
+                            android:gravity="center"
+                            android:layout_gravity="center"
+                            android:background="@drawable/buy_button"
+                            android:layout_height="match_parent">
+
+                        <TextView
+                                android:layout_width="match_parent"
+                                android:text="A"
+                                android:layout_gravity="center"
+                                android:gravity="center"
+                                android:background="@drawable/circle"
+                                android:textColor="@color/red5"
+                                android:textSize="@dimen/_14dp"
+                                android:layout_height="match_parent"/>
+
+                    </LinearLayout>
+
+
+                    <LinearLayout
+                            android:id="@+id/firstAnswer"
                             android:layout_width="wrap_content"
-                            android:text="A"
+                            android:orientation="horizontal"
                             android:layout_gravity="center"
                             android:gravity="center"
-                            android:layout_weight=".1"
-                            android:textSize="@dimen/_14dp"
-                            android:layout_height="wrap_content"/>
+                            android:layout_weight=".85"
+                            android:background="@drawable/buy_button"
+                            android:layout_height="match_parent">
 
-                    <TextView
-                            android:layout_width="wrap_content"
-                            android:text="Sone Ki Chidya"
-                            android:textSize="@dimen/_14dp"
-                            android:layout_weight=".8"
-                            android:layout_height="wrap_content"/>
+                        <TextView
+                                android:layout_width="wrap_content"
+                                android:text="Sone Ki Chidya"
+                                android:layout_weight="1"
+                                android:textStyle="bold"
+                                android:layout_marginLeft="@dimen/_4dp"
+                                android:textSize="@dimen/_13dp"
+                                android:textColor="@color/black"
+                                android:layout_height="wrap_content"/>
 
-                    <ImageView
-                            android:src="@drawable/ic_check_mark"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"/>
 
-                </LinearLayout>
-
-                <LinearLayout
-                        android:layout_width="match_parent"
-                        android:orientation="horizontal"
-                        android:padding="@dimen/_8dp"
-                        android:background="@drawable/bg_boder_round"
-                        android:layout_marginTop="@dimen/_5dp"
-                        android:layout_marginBottom="@dimen/_5dp"
-                        android:layout_height="wrap_content">
-
-                    <TextView
-                            android:layout_width="wrap_content"
-                            android:text="A"
-                            android:layout_gravity="center"
-                            android:gravity="center"
-                            android:layout_weight=".1"
-                            android:textSize="@dimen/_14dp"
-                            android:layout_height="wrap_content"/>
-
-                    <TextView
-                            android:layout_width="wrap_content"
-                            android:text="Sone Ki Chidya"
-                            android:textSize="@dimen/_14dp"
-                            android:layout_weight=".8"
-                            android:layout_height="wrap_content"/>
-
-                    <ImageView
-                            android:src="@drawable/ic_check_mark"
-                            android:visibility="gone"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"/>
+                    </LinearLayout>
 
 
                 </LinearLayout>
@@ -124,33 +122,55 @@
                 <LinearLayout
                         android:layout_width="match_parent"
                         android:orientation="horizontal"
-                        android:padding="@dimen/_8dp"
-                        android:background="@drawable/bg_boder_round"
-                        android:layout_marginTop="@dimen/_5dp"
-                        android:layout_marginBottom="@dimen/_5dp"
-                        android:layout_height="wrap_content">
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:background="@drawable/buy_button"
+                        android:layout_margin="@dimen/_5dp"
+                        android:layout_height="@dimen/_35dp">
 
-                    <TextView
+                    <LinearLayout
+                            android:layout_width="@dimen/_10dp"
+                            android:layout_weight=".15"
+                            android:gravity="center"
+                            android:layout_gravity="center"
+                            android:background="@drawable/buy_button"
+                            android:layout_height="match_parent">
+
+                        <TextView
+                                android:layout_width="match_parent"
+                                android:text="B"
+                                android:layout_gravity="center"
+                                android:gravity="center"
+                                android:background="@drawable/circle"
+                                android:textColor="@color/red5"
+                                android:textSize="@dimen/_14dp"
+                                android:layout_height="match_parent"/>
+
+                    </LinearLayout>
+
+
+                    <LinearLayout
+                            android:id="@+id/bAnswer"
                             android:layout_width="wrap_content"
-                            android:text="A"
+                            android:orientation="horizontal"
                             android:layout_gravity="center"
                             android:gravity="center"
-                            android:layout_weight=".1"
-                            android:textSize="@dimen/_14dp"
-                            android:layout_height="wrap_content"/>
+                            android:layout_weight=".85"
+                            android:background="@drawable/buy_button"
+                            android:layout_height="match_parent">
 
-                    <TextView
-                            android:layout_width="wrap_content"
-                            android:text="Sone Ki Chidya"
-                            android:textSize="@dimen/_14dp"
-                            android:layout_weight=".8"
-                            android:layout_height="wrap_content"/>
+                        <TextView
+                                android:layout_width="wrap_content"
+                                android:text="Sone Ki Chidya"
+                                android:layout_weight="1"
+                                android:textSize="@dimen/_13dp"
+                                android:textStyle="bold"
+                                android:layout_marginLeft="@dimen/_4dp"
+                                android:textColor="@color/black"
+                                android:layout_height="wrap_content"/>
 
-                    <ImageView
-                            android:src="@drawable/ic_check_mark"
-                            android:visibility="gone"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"/>
+
+                    </LinearLayout>
 
 
                 </LinearLayout>
@@ -158,33 +178,118 @@
                 <LinearLayout
                         android:layout_width="match_parent"
                         android:orientation="horizontal"
-                        android:padding="@dimen/_8dp"
-                        android:background="@drawable/bg_boder_round"
-                        android:layout_marginTop="@dimen/_5dp"
-                        android:layout_marginBottom="@dimen/_5dp"
-                        android:layout_height="wrap_content">
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:background="@drawable/buy_button"
+                        android:layout_margin="@dimen/_5dp"
+                        android:layout_height="@dimen/_35dp">
 
-                    <TextView
+                    <LinearLayout
+                            android:layout_width="@dimen/_10dp"
+                            android:layout_weight=".15"
+                            android:gravity="center"
+                            android:layout_gravity="center"
+                            android:background="@drawable/buy_button"
+                            android:layout_height="match_parent">
+
+                        <TextView
+                                android:layout_width="match_parent"
+                                android:text="C"
+                                android:layout_gravity="center"
+                                android:gravity="center"
+                                android:background="@drawable/circle"
+                                android:textColor="@color/red5"
+                                android:textSize="@dimen/_14dp"
+                                android:layout_height="match_parent"/>
+
+                    </LinearLayout>
+
+
+                    <LinearLayout
+                            android:id="@+id/cAnswer"
                             android:layout_width="wrap_content"
-                            android:text="A"
+                            android:orientation="horizontal"
                             android:layout_gravity="center"
                             android:gravity="center"
-                            android:layout_weight=".1"
-                            android:textSize="@dimen/_14dp"
-                            android:layout_height="wrap_content"/>
+                            android:layout_weight=".85"
+                            android:background="@drawable/buy_button"
+                            android:layout_height="match_parent">
 
-                    <TextView
-                            android:layout_width="wrap_content"
-                            android:text="Sone Ki Chidya"
-                            android:textSize="@dimen/_14dp"
-                            android:layout_weight=".8"
-                            android:layout_height="wrap_content"/>
+                        <TextView
+                                android:layout_width="wrap_content"
+                                android:text="Sone Ki Chidya"
+                                android:layout_weight="1"
+                                android:textSize="@dimen/_13dp"
+                                android:textStyle="bold"
+                                android:layout_marginLeft="@dimen/_4dp"
+                                android:textColor="@color/black"
+                                android:layout_height="wrap_content"/>
+
+
+                    </LinearLayout>
 
 
                 </LinearLayout>
 
+                <LinearLayout
+                        android:layout_width="match_parent"
+                        android:orientation="horizontal"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:background="@drawable/buy_button"
+                        android:layout_margin="@dimen/_5dp"
+                        android:layout_height="@dimen/_35dp">
+
+                    <LinearLayout
+                            android:layout_width="@dimen/_10dp"
+                            android:layout_weight=".15"
+                            android:gravity="center"
+                            android:layout_gravity="center"
+                            android:background="@drawable/buy_button"
+                            android:layout_height="match_parent">
+
+                        <TextView
+                                android:layout_width="match_parent"
+                                android:text="D"
+                                android:layout_gravity="center"
+                                android:gravity="center"
+                                android:background="@drawable/circle"
+                                android:textColor="@color/red5"
+                                android:textSize="@dimen/_14dp"
+                                android:layout_height="match_parent"/>
+
+                    </LinearLayout>
+
+
+                    <LinearLayout
+                            android:id="@+id/dAnswer"
+                            android:layout_width="wrap_content"
+                            android:orientation="horizontal"
+                            android:layout_gravity="center"
+                            android:gravity="center"
+                            android:layout_weight=".85"
+                            android:background="@drawable/buy_button"
+                            android:layout_height="match_parent">
+
+                        <TextView
+                                android:layout_width="wrap_content"
+                                android:text="Sone Ki Chidya"
+                                android:layout_weight="1"
+                                android:textSize="@dimen/_13dp"
+                                android:textStyle="bold"
+                                android:textColor="@color/black"
+                                android:layout_marginLeft="@dimen/_4dp"
+                                android:layout_height="wrap_content"/>
+
+
+                    </LinearLayout>
+
+
+                </LinearLayout>
+-->
 
             </LinearLayout>
+
 
         </LinearLayout>
 

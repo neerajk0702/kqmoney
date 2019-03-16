@@ -15,6 +15,8 @@ public class Contants {
     public static String Registration = "signup.php";
 
     public static String AllQuestionCategory = "getAllQuestionCategory.php";
+    public static String AllQuestion = "getAllQuestion.php";
+
 
 
 }

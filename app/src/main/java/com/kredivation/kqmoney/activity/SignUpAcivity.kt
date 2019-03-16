@@ -46,7 +46,7 @@ class SignUpAcivity : AppCompatActivity() {
             val multipartBody = setMultipartBodyVaule()
             val fileUploaderHelper =
                 object : FileUploaderHelper(this@SignUpAcivity, payloadList, multipartBody, url) {
-                    override fun receiveData(result: String) {
+                    override fun receiveData(result: String?) {
                         val data = Gson().fromJson<ContentData>(result, ContentData::class.java!!)
                         if (data != null && data.getStatus().equals(true)) {
                             Toast.makeText(this@SignUpAcivity, "Signup Successful", Toast.LENGTH_LONG)

@@ -17,7 +17,7 @@ class ServiceCaller(internal var context: Context) {
         workCompletedCallback: IAsyncWorkCompletedCallback
     ) {
         ServiceHelper().callService(loginUrl, null!!, object : IServiceSuccessCallback {
-            override fun onDone(doneWhatCode: String, result: String, error: String) {
+            override fun onDone(doneWhatCode: String, result: String, error: String?) {
                 if (result != null) {
                     workCompletedCallback.onDone(result, true)
                     Log.d(Contants.LOG_TAG, "$methodNmae********$result")
@@ -37,7 +37,7 @@ class ServiceCaller(internal var context: Context) {
     ) {
         Log.d(Contants.LOG_TAG, methodNmae + "Payload********" + jsonObject.toString())
         ServiceHelper().callService(loginUrl, jsonObject, object : IServiceSuccessCallback {
-            override fun onDone(doneWhatCode: String, result: String, error: String) {
+            override fun onDone(doneWhatCode: String, result: String, error: String?) {
                 if (result != null) {
                     workCompletedCallback.onDone(result, true)
                     Log.d(Contants.LOG_TAG, "$methodNmae********$result")
@@ -57,7 +57,7 @@ class ServiceCaller(internal var context: Context) {
     ) {
         Log.d(Contants.LOG_TAG, methodNmae + "Payload********" + jsonObject.toString())
         ServiceHelper().callGetService(loginUrl, jsonObject, object : IServiceSuccessCallback {
-            override fun onDone(doneWhatCode: String, result: String, error: String) {
+            override fun onDone(doneWhatCode: String, result: String, error: String?) {
                 if (result != null) {
                     workCompletedCallback.onDone(result, true)
                     Log.d(Contants.LOG_TAG, "$methodNmae********$result")
@@ -76,7 +76,7 @@ class ServiceCaller(internal var context: Context) {
         workCompletedCallback: IAsyncWorkCompletedCallback
     ) {
         ServiceHelper().callGetService(loginUrl, null!!, object : IServiceSuccessCallback {
-            override fun onDone(doneWhatCode: String, result: String, error: String) {
+            override fun onDone(doneWhatCode: String, result: String, error: String?) {
                 if (result != null) {
                     workCompletedCallback.onDone(result, true)
                     Log.d(Contants.LOG_TAG, "$methodNmae********$result")

@@ -5,7 +5,6 @@ import com.android.volley.*
 import com.android.volley.toolbox.JsonArrayRequest
 import com.android.volley.toolbox.JsonObjectRequest
 import com.kredivation.kqmoney.utility.Contants
-import org.json.JSONArray
 import org.json.JSONObject
 
 import java.util.HashMap
@@ -88,7 +87,7 @@ class ServiceHelper : IServiceHelper {
                 if (Contants.IS_DEBUG_LOG) {
                     Log.d(Contants.LOG_TAG, "successfully called $callerUrl")
                 }
-                c.onDone(callerUrl, response.toString(), null!!)
+                c.onDone(callerUrl, response.toString(), null)
             }, Response.ErrorListener { error ->
                 if (Contants.IS_DEBUG_LOG) {
                     Log.d(Contants.LOG_TAG, "Error at ServiceHelper: callService " + callerUrl + ": " + error.message)

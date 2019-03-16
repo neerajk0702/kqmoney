@@ -294,4 +294,7 @@
 
     //stroke color for CardStack
     <color name="strokeColor">#B1B1B1</color>
+
+    <color name="color1">#0093C6</color>
+    <color name="color2">#5CC8E2</color>
 </resources>

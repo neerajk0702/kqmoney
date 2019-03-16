@@ -5,5 +5,5 @@ package com.kredivation.kqmoney.framework
  */
 
 interface UploadLicenseImageCallback {
-    fun receiveData(result: String)
+    fun receiveData(result: String?)
 }
