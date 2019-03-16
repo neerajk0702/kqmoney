@@ -1,5 +1,6 @@
 package com.kredivation.allquestionanswer
 
+import android.content.Intent
 import android.os.Bundle
 import android.support.design.widget.NavigationView
 import android.support.v4.view.GravityCompat
@@ -17,6 +18,7 @@ import org.json.JSONObject
 import java.util.ArrayList
 import android.widget.Toast
 import com.kredivation.kqmoney.R
+import com.kredivation.kqmoney.activity.AskQuestionActivity
 import com.kredivation.kqmoney.framework.IServiceSuccessCallback
 import com.kredivation.kqmoney.framework.ServiceHelper
 import com.kredivation.kqmoney.utility.ASTProgressBar
@@ -61,6 +63,11 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         getAllQuestionCategory();
         adapter = CustomGridViewAdapter(baseContext, NewssList)
         gridView.adapter = adapter
+
+        askQuestionFab.setOnClickListener {
+            val intent = Intent(this, AskQuestionActivity::class.java)
+            startActivity(intent)
+        }
     }
 
 

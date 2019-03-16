@@ -6,4 +6,16 @@
     <string name="nav_header_subtitle">android.studio@android.com</string>
     <string name="nav_header_desc">Navigation header</string>
     <string name="action_settings">Settings</string>
+
+    <string-array name="type">
+        <item>Technology</item>
+        <item>Social</item>
+        <item>Medical</item>
+        <item>Sport</item>
+        <item>Science</item>
+        <item>Religion</item>
+        <item>History</item>
+        <item>Other</item>
+
+    </string-array>
 </resources>

@@ -10,6 +10,7 @@ import com.kredivation.kqmoney.R
 import com.kredivation.kqmoney.framework.FileUploaderHelper
 import com.kredivation.kqmoney.framework.FileUploaderHelperWithProgress
 import com.kredivation.kqmoney.model.ContentData
+import com.kredivation.kqmoney.utility.ASTProgressBar
 import com.kredivation.kqmoney.utility.Contants
 import com.kredivation.kqmoney.utility.Utility
 import kotlinx.android.synthetic.main.activity_login.*
@@ -35,9 +36,12 @@ class SignUpAcivity : AppCompatActivity() {
     }
 
 
+    var dotDialog: ASTProgressBar? = null
     private fun callSignup() {
         val payloadList = HashMap<String, String>()
         if (Utility.isOnline(this)) {
+            dotDialog = ASTProgressBar(this@SignUpAcivity)
+            dotDialog!!.show()
             val url = Contants.BASE_URL + Contants.Registration
             payloadList["name"] = name.text.toString();
             payloadList["email"] = emailid.text.toString();
@@ -63,6 +67,10 @@ class SignUpAcivity : AppCompatActivity() {
             fileUploaderHelper.execute()
         } else {
             showToast(Contants.OFFLINE_MESSAGE)
+        }
+
+        if (dotDialog!!.isShowing()) {
+            dotDialog!!.dismiss()
         }
     }
 

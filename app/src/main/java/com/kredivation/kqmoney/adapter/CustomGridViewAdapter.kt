@@ -87,7 +87,6 @@ class CustomGridViewAdapter : BaseAdapter {
 
     fun openViewQuestionActivity(){
         val intent = Intent(context, ViewQAModelActivity::class.java)
-        intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_NEW_TASK
         context?.startActivity(intent)
     }
 }

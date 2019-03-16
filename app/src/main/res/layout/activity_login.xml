@@ -135,6 +135,7 @@
                             android:layout_height="wrap_content"
                             android:hint="User Phone No"
                             android:padding="@dimen/_5dp"
+                            android:inputType="phone"
                             android:layout_weight=".8"
                             android:backgroundTint="@color/white"
                             android:singleLine="true"

@@ -69,7 +69,7 @@ class ViewQAModelActivity : AppCompatActivity() {
                                         newsList.add(typeData)
                                     }
                                     list.adapter?.notifyDataSetChanged()
-
+                                    list.adapter = MyQAModelRecyclerViewAdapter(newsList, baseContext)
                                     //list.adapter = MyQAModelRecyclerViewAdapter(newsList)
                                     // adapter = CustomGridViewAdapter(baseContext, NewssList)
                                     // gridView.adapter = adapter

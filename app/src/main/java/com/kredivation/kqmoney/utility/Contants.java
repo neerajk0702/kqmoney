@@ -13,9 +13,10 @@ public class Contants {
     public static final String APP_DIRECTORY = "/E" + DEFAULT_APPLICATION_NAME + "Directory/";
     public static String BASE_URL = "https://kredivation.com/KvQuestion/";
     public static String Registration = "signup.php";
-
+    public static String UserDetails = "getUserDetails.php";
     public static String AllQuestionCategory = "getAllQuestionCategory.php";
     public static String AllQuestion = "getAllQuestion.php";
+    public static String addQuestion = "addQuestion.php";
 
 
 
